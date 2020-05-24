@@ -38,24 +38,24 @@ fetch('./js/prices.json')
     const fronts = data.fronts;
     console.log(fronts);
   
-    for (let i = 0; i < fronts.length - 2; i++) {
+    for (let i = 0; i < fronts.length; i++) {
         optionA = document.createElement('option');
         optionA.text = fronts[i].name;
         optionA.value = fronts[i].price;
         furnitureA.add(optionA);
     }   
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < fronts.length; i++) {
         optionB = document.createElement('option');
-        optionB.text = data[i].name;
-        optionB.value = data[i].price;
+        optionB.text = fronts[i].name;
+        optionB.value = fronts[i].price;
         furnitureB.add(optionB);
     }  
 
-    for (let i = 0; i < data.length; i++) {
+    for (let i = 0; i < fronts.length; i++) {
         optionC = document.createElement('option');
-        optionC.text = data[i].name;
-        optionC.value = data[i].price;
+        optionC.text = fronts[i].name;
+        optionC.value = fronts[i].price;
         furnitureC.add(optionC);
     }  
 })
