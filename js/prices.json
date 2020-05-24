@@ -1,0 +1,59 @@
+{
+  "fronts" : [
+    {
+      "name": "Płyta laminowana",
+      "price": 10
+    },
+    {
+      "name": "MDF folia drewnopodobna",
+      "price": 20
+    },
+    {
+      "name": "MDF lakier mat",
+      "price": 30
+    },
+    {
+      "name": "MDF lakier polysk",
+      "price": 40
+    },
+    {
+      "name": "MDF lakier uchwyt frezowany",
+      "price": 50
+    },
+    {
+      "name": "Fornir modyfikowany",
+      "price": 60
+    },
+    {
+      "name": "Fornir naturalny",
+      "price": 70
+    },
+    {
+      "name": "Drewno",
+      "price": 80
+    }
+  ],
+
+  "equipment" : [
+    {
+      "name": "Szuflada cichy domyk",
+      "price": 10
+    },
+    {
+      "name": "Magic corner",
+      "price": 10
+    },
+    {
+      "name": "Carg Podblatowy",
+      "price": 10
+    },
+    {
+      "name": "Carg Wysoki",
+      "price": 10
+    },
+    {
+      "name": "LED",
+      "price": 10
+    }
+  ]
+}

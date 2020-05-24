@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +12,8 @@
     <div class="container">
         <div class="col-1-2">
             <h1>Wycena zabudowy kuchennej</h1>
-            <form id="evaluationForm" class="form" method="" action="" novalidate >
 
+            <form id="evaluationForm" class="form" method="" action="" novalidate >
                 <div class="form-group">
                     <h2>Wymiary</h2>
                     <div class="form-row">
@@ -37,7 +37,6 @@
                             <option disabled selected value> -- wybierz wysokość zabudowy -- </option>
                             <option value="215">Standardowa - 215</option>
                             <option value="260">Do sufitu - 260</option>
-
                         </select>
                     </div>
                 </div>
@@ -47,49 +46,60 @@
                     <div class="form-row">
                         <label for="furniture-A">Zabudowa A</label>
                         <select name="furniture-A" id="furnitureA" data-error="Wybierz rodzaj zabudowy" required>
-                            <option disabled selected value> -- wybierz front -- </option>
-                            <option value="plyta_laminowana">Płyta laminowana</option>
-                            <option value="folia-drewnopodobna">MDF folia drewnopodobna</option>
-                            <option value="lakier-mat">MDF lakier mat</option>
-                            <option value="lakier-polysk">MDF lakier połysk</option>
-                            <option value="lakier-frez">MDF lakier uchwyt frezowany</option>
-                            <option value="fornir-modyfikowany">Fornir modyfikowany</option>
-                            <option value="fornir-naturalny">Fornir naturalny</option>
-                            <option value="drewno">Drewno</option>
+                            <!-- options to choose from json -->
                         </select>
                     </div>
     
                     <div class="form-row">
                         <label for="furniture-B">Zabudowa B</label>
                         <select name="furniture-B" id="furnitureB" data-error="Wybierz zabudowy" required>
-                            <option disabled selected value> -- wybierz front -- </option>
-                            <option value="plyta_laminowana">Płyta laminowana</option>
-                            <option value="folia-drewnopodobna">MDF folia drewnopodobna</option>
-                            <option value="lakier-mat">MDF lakier mat</option>
-                            <option value="lakier-polysk">MDF lakier połysk</option>
-                            <option value="lakier-frez">MDF lakier uchwyt frezowany</option>
-                            <option value="fornir-modyfikowany">Fornir modyfikowany</option>
-                            <option value="fornir-naturalny">Fornir naturalny</option>
-                            <option value="drewno">Drewno</option>
+                            <!-- options to choose from json -->
                         </select>
                     </div>
     
                     <div class="form-row">
                         <label for="furniture-C">Zabudowa C</label>
                         <select name="furniture-C" id="furnitureC" data-error="Wybierz zabudowy" required>
-                            <option disabled selected value> -- wybierz front -- </option>
-                            <option value="plyta_laminowana">Płyta laminowana</option>
-                            <option value="folia-drewnopodobna">MDF folia drewnopodobna</option>
-                            <option value="lakier-mat">MDF lakier mat</option>
-                            <option value="lakier-polysk">MDF lakier połysk</option>
-                            <option value="lakier-frez">MDF lakier uchwyt frezowany</option>
-                            <option value="fornir-modyfikowany">Fornir modyfikowany</option>
-                            <option value="fornir-naturalny">Fornir naturalny</option>
-                            <option value="drewno">Drewno</option>
+                            <!-- options to choose from json -->  
                         </select>
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <h2>Wyposażenie</h2>
+                    <div class="form-row">
+                        <label for="number-A">Ilość szuflad z cichym domykaniem</label>
+                        <input type="text" name="number-A" id="numberA" data-error="Podaj długość A" pattern="[0-9]+" placeholder="długość A" required>
+                    </div>
+    
+                    <div class="form-row">
+                        <label for="number-B">Ilość systemów typu Magic Corner</label>
+                        <input type="text" name="number-B" id="numberB" data-error="Podaj długość B" pattern="[0-9]" placeholder="długość B" required>
+                    </div>
+    
+                    <div class="form-row">
+                        <label for="number-C">Ilość carg podblatowych (mini)</label>
+                        <input type="text" name="number-C" id="lengthC" data-error="Podaj długość C" pattern="[0-9]" placeholder="długość C" required>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="number-C">Ilość carg wysokich (maxi)</label>
+                        <input type="text" name="number-C" id="numberC" data-error="Podaj długość C" pattern="[0-9]" placeholder="długość C" required>
+                    </div>
+    
+                    <div class="form-row">
+                        <label for="kitchen-height">Oświetlenie podszafkowe LED</label>
+                        <select name="kitchen-height" id="kitchenHeight" data-error="Wybierz wysokość zabudowy" required>
+                            <option disabled selected value> -- wybierz wysokość zabudowy -- </option>
+                            <option value="215">TAK</option>
+                            <option value="260">NIE</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group form-row">
+                    <button class="btn-submit" id="submit" type="submit" name="submit">Oblicz</button>
+                </div>
             </form>
         </div>
 
@@ -102,5 +112,7 @@
         </div>
     </div>
 
+
+    <script src="js/app.js"></script>
 </body>
 </html>

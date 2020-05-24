@@ -47,6 +47,7 @@ h1 {
 
 .form {
     width: 70%;
+    margin-bottom: 5rem;
 
     .form-group {
         padding-top: 2rem;
@@ -75,6 +76,12 @@ h1 {
                 background: #ddd;
                 border: none;
             }
+        }
+
+        .btn-submit {
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            border-radius: .2rem;
         }
     }
 
