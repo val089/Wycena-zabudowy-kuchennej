@@ -1,63 +1,71 @@
 const form = document.querySelector('#evaluationForm');
 
-let furnitureA = form.querySelector('#furnitureA');
-let furnitureB = form.querySelector('#furnitureB');
-let furnitureC = form.querySelector('#furnitureC');
+//kitchen dimensions
+const lengthA = form.querySelector('#lengthA');
+const lengthB = form.querySelector('#lengthB');
+const lengthC = form.querySelector('#lengthC');
 
-furnitureA.length = 0;
+//kitchen fronts
+const frontA = form.querySelector('#frontA');
+const frontB = form.querySelector('#frontB');
+const frontC = form.querySelector('#frontC');
 
-let defaultOptionA = document.createElement('option');
-defaultOptionA.setAttribute('disabled', 'selected');
-defaultOptionA.text = 'Wybierz rodzaj frontu';
+// frontA.length = 0;
 
-let defaultOptionB = document.createElement('option');
-defaultOptionB.setAttribute('disabled', 'selected');
-defaultOptionB.text = 'Wybierz rodzaj frontu';
+const frontsTab = [];
+frontsTab.push(frontA, frontB, frontC);
 
-let defaultOptionC = document.createElement('option');
-defaultOptionC.setAttribute('disabled', 'selected');
-defaultOptionC.text = 'Wybierz rodzaj frontu';
+frontsTab.forEach(function(el) {
+    const defaultOption = document.createElement('option');
+    defaultOption.setAttribute('disabled', 'selected');
+    defaultOption.text = '-- wybierz rodzaj frontu --';
 
-furnitureA.add(defaultOptionA);
-furnitureA.selectedIndex = 0;
+    el.add(defaultOption);
+    el.selectedIndex = 0;
+});
 
-furnitureB.add(defaultOptionB);
-furnitureB.selectedIndex = 0;
-
-furnitureC.add(defaultOptionC);
-furnitureC.selectedIndex = 0;
-
-fetch('./js/prices.json')
+fetch("./prices.json")
 .then(response => response.json())
 .then(data => {
 
-    let optionA;
-    let optionB;
-    let optionC;
+    let optionFrontA;
+    let optionFrontB;
+    let optionFrontC;
 
     const fronts = data.fronts;
-    console.log(fronts);
+    // console.log(fronts);
+    // console.log(typeof fronts[0].price);
   
     for (let i = 0; i < fronts.length; i++) {
-        optionA = document.createElement('option');
-        optionA.text = fronts[i].name;
-        optionA.value = fronts[i].price;
-        furnitureA.add(optionA);
+        optionFrontA = document.createElement('option');
+        optionFrontA.text = fronts[i].name;
+        optionFrontA.value = fronts[i].price;
+        frontA.add(optionFrontA);
     }   
 
     for (let i = 0; i < fronts.length; i++) {
-        optionB = document.createElement('option');
-        optionB.text = fronts[i].name;
-        optionB.value = fronts[i].price;
-        furnitureB.add(optionB);
+        optionFrontB = document.createElement('option');
+        optionFrontB.text = fronts[i].name;
+        optionFrontB.value = fronts[i].price;
+        frontB.add(optionFrontB);
     }  
 
     for (let i = 0; i < fronts.length; i++) {
-        optionC = document.createElement('option');
-        optionC.text = fronts[i].name;
-        optionC.value = fronts[i].price;
-        furnitureC.add(optionC);
-    }  
+        optionFrontC = document.createElement('option');
+        optionFrontC.text = fronts[i].name;
+        optionFrontC.value = fronts[i].price;
+        frontC.add(optionFrontC);
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const frA = parseInt(frontA.value);
+        const frB = parseInt(frontB.value);
+        const frC = parseInt(frontC.value);
+
+        console.log(frA + frB + frC);
+    });
 })
 .catch(error => {
   console.error('Coś poszło nie tak!');
