@@ -1,9 +1,5 @@
 const form = document.querySelector('#evaluationForm');
-
-//kitchen dimensions
-const lengthA = form.querySelector('#lengthA');
-const lengthB = form.querySelector('#lengthB');
-const lengthC = form.querySelector('#lengthC');
+const result = document.querySelector('#result');
 
 //kitchen fronts
 const frontA = form.querySelector('#frontA');
@@ -15,6 +11,7 @@ const frontC = form.querySelector('#frontC');
 const frontsTab = [];
 frontsTab.push(frontA, frontB, frontC);
 
+//create option elements for fronts select
 frontsTab.forEach(function(el) {
     const defaultOption = document.createElement('option');
     defaultOption.setAttribute('disabled', 'selected');
@@ -60,11 +57,45 @@ fetch("./prices.json")
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        const frA = parseInt(frontA.value);
-        const frB = parseInt(frontB.value);
-        const frC = parseInt(frontC.value);
+        //kitchen dimensions
+        const lengthA = parseInt(form.querySelector('#lengthA').value);
+        const lengthB = parseInt(form.querySelector('#lengthB').value);
+        const lengthC = parseInt(form.querySelector('#lengthC').value);
 
-        console.log(frA + frB + frC);
+        //kitchen height
+        const kitchenHeight = parseInt(form.querySelector('#kitchenHeight').value);
+
+        //kitchen fronts values
+        const frontA_value = parseInt(frontA.value);
+        const frontB_value = parseInt(frontB.value);
+        const frontC_value = parseInt(frontC.value);
+
+        //kitchen frontB height
+        const heightB = parseInt(form.querySelector('#heightB').value);
+
+        //kitchen equipment quantity
+        const equipmentA_quantity = parseInt(form.querySelector('#equipmentA').value);
+        const equipmentB_quantity = parseInt(form.querySelector('#equipmentB').value);
+        const equipmentC_quantity = parseInt(form.querySelector('#equipmentC').value);
+        const equipmentD_quantity = parseInt(form.querySelector('#equipmentD').value);
+
+        const equipment = data.equipment;
+        const equipmentPrice = equipmentA_quantity * equipment[0].price + equipmentB_quantity  * equipment[1].price + equipmentC_quantity * equipment[2].price + equipmentD_quantity * equipment[3].price;
+
+        //kitchen LED
+        const kitchenLED = Boolean(form.querySelector('#kitchenLED').value);
+        const ledPrice = equipment[4].price;
+
+        //LAST KITCHEN PRICE 
+        const standardKitcheHeight = 85;
+        const kitchenPrice = (lengthA * standardKitcheHeight * frontA_value) + (lengthB * heightB * frontB_value) + (lengthC * kitchenHeight * frontC_value) + equipmentPrice;
+
+        if (kitchenLED === true) {
+            result.innerHTML = `${kitchenPrice + ledPrice} zł`;
+        } else {
+            result.innerHTML = `${kitchenPrice} zł`;
+        }
+
     });
 })
 .catch(error => {

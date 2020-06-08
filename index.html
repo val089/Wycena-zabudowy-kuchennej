@@ -18,17 +18,30 @@
                     <h2>Wymiary</h2>
                     <div class="form-row">
                         <label for="length-A">Długość A [cm]</label>
-                        <input type="text" name="length-A" id="lengthA" data-error="Podaj długość A" pattern="[0-9]+" placeholder="długość A" required>
+                        <input type="number" name="length-A" id="lengthA" data-error="Podaj długość A" pattern="[0-9]+" required>
                     </div>
-    
+                    <br>
+                    <br>
                     <div class="form-row">
                         <label for="length-B">Długość B [cm]</label>
-                        <input type="text" name="length-B" id="lengthB" data-error="Podaj długość B" pattern="[0-9]" placeholder="długość B" required>
+                        <input type="text" name="length-B" id="lengthB" data-error="Podaj długość B" pattern="[0-9]" required>
                     </div>
-    
+
+                    <div class="form-row">
+                        <label for="height-B">Wysokość zabudowy B [cm]</label>
+                        <select name="height-B" id="heightB" data-error="Wybierz wysokość zabudowy B" required>
+                            <option disabled selected value> -- wybierz wysokość zabudowy B -- </option>
+                            <option value="60">60 cm</option>
+                            <option value="72">72 cm</option>
+                            <option value="93">93 cm</option>
+                            <option value="110">110 cm</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
                     <div class="form-row">
                         <label for="length-C">Długość C [cm]</label>
-                        <input type="text" name="length-C" id="lengthC" data-error="Podaj długość C" pattern="[0-9]" placeholder="długość C" required>
+                        <input type="number" name="length-C" id="lengthC" data-error="Podaj długość C" pattern="[0-9]" required>
                     </div>
     
                     <div class="form-row">
@@ -52,14 +65,14 @@
     
                     <div class="form-row">
                         <label for="front-B">Zabudowa B</label>
-                        <select name="front-B" id="frontB" data-error="Wybierz zabudowy" required>
+                        <select name="front-B" id="frontB" data-error="Wybierz rodzaj zabudowy" required>
                             <!-- options to choose from json -->
                         </select>
                     </div>
     
                     <div class="form-row">
                         <label for="furniture-C">Zabudowa C</label>
-                        <select name="front-C" id="frontC" data-error="Wybierz zabudowy" required>
+                        <select name="front-C" id="frontC" data-error="Wybierz rodzaj zabudowy" required>
                             <!-- options to choose from json -->  
                         </select>
                     </div>
@@ -68,31 +81,31 @@
                 <div class="form-group">
                     <h2>Wyposażenie</h2>
                     <div class="form-row">
-                        <label for="number-A">Ilość szuflad z cichym domykaniem</label>
-                        <input type="text" name="number-A" id="numberA" data-error="Podaj długość A" pattern="[0-9]+" placeholder="długość A" required>
+                        <label for="equipment-A">Ilość szuflad z cichym domykaniem</label>
+                        <input type="number" name="equipment-A" id="equipmentA" data-error="Podaj ilość" pattern="[0-9]+" required>
                     </div>
     
                     <div class="form-row">
-                        <label for="number-B">Ilość systemów typu Magic Corner</label>
-                        <input type="text" name="number-B" id="numberB" data-error="Podaj długość B" pattern="[0-9]" placeholder="długość B" required>
+                        <label for="equipment-A">Ilość systemów typu Magic Corner</label>
+                        <input type="number" name="equipment-A" id="equipmentB" data-error="Podaj ilość" pattern="[0-9]" required>
                     </div>
     
                     <div class="form-row">
-                        <label for="number-C">Ilość carg podblatowych (mini)</label>
-                        <input type="text" name="number-C" id="lengthC" data-error="Podaj długość C" pattern="[0-9]" placeholder="długość C" required>
+                        <label for="equipment-A">Ilość carg podblatowych (mini)</label>
+                        <input type="number" name="equipment-A" id="equipmentC" data-error="Podaj ilość" pattern="[0-9]" required>
                     </div>
 
                     <div class="form-row">
-                        <label for="number-C">Ilość carg wysokich (maxi)</label>
-                        <input type="text" name="number-C" id="numberC" data-error="Podaj długość C" pattern="[0-9]" placeholder="długość C" required>
+                        <label for="equipment-A">Ilość carg wysokich (maxi)</label>
+                        <input type="number" name="equipment-A" id="equipmentD" data-error="Podaj ilość" pattern="[0-9]" required>
                     </div>
     
                     <div class="form-row">
-                        <label for="kitchen-height">Oświetlenie podszafkowe LED</label>
-                        <select name="kitchen-height" id="kitchenHeight" data-error="Wybierz wysokość zabudowy" required>
+                        <label for="kitchenLED">Oświetlenie podszafkowe LED</label>
+                        <select name="kitchenLED" id="kitchenLED" data-error="Wybierz wysokość zabudowy" required>
                             <option disabled selected value> -- wybierz tak lub nie -- </option>
-                            <option value="215">TAK</option>
-                            <option value="260">NIE</option>
+                            <option value=true>TAK</option>
+                            <option value=false>NIE</option>
                         </select>
                     </div>
                 </div>
@@ -108,7 +121,7 @@
 
     
             <h2>CENA:</h2>
-                <!-- <output name="result" for="a b">60</output> -->
+            <p id="result"></p>
         </div>
     </div>
 

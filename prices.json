@@ -41,19 +41,19 @@
     },
     {
       "name": "Magic corner",
-      "price": 10
+      "price": 12
     },
     {
       "name": "Carg Podblatowy",
-      "price": 10
+      "price": 15
     },
     {
       "name": "Carg Wysoki",
-      "price": 10
+      "price": 20
     },
     {
       "name": "LED",
-      "price": 10
+      "price": 200
     }
   ]
 }
